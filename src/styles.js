@@ -10,13 +10,13 @@ export const Container = styled.div`
 `;
 
 export const Table = styled.table`
+    width: 100%;
     text-align: center;
     margin: 20px;
     background: #FFFF;
     border-radius: 4px;
-    padding: 10px;
     th, td{
-        padding: 0 20px;
+        padding: 0 5px;
         button{
                 padding: 0 10px;
                 border: 0;
@@ -26,7 +26,9 @@ export const Table = styled.table`
                 cursor: pointer;
             }
     }
-    
+    img{
+        width: 50px;
+    }
     tr:hover {background-color: #ddd;}
     tr:nth-child(even){background-color: #f2f2f2;}
 `;

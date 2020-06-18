@@ -63,9 +63,15 @@ function App() {
       age,
       profile_image
     });
-    //como o retorno eh diferente nao da de setar o state
-    //setEmployees([...employees, response.data.data]);
-    loadEmployees();
+    const newData = {
+      id: response.data.data.id,
+      employee_name: response.data.data.name,
+      employee_salary: response.data.data.salary,
+      employee_age: response.data.data.age,
+      profile_image: response.data.data.profile_image,
+    }
+    setEmployees([...employees, newData]);
+    //loadEmployees();
   }
 
   function handleCancel(){
@@ -125,7 +131,7 @@ function App() {
                   <td>{employee.employee_name}</td>
                   <td>{employee.employee_salary}</td>
                   <td>{employee.employee_age}</td>
-                  <td>{employee.profile_image}</td>
+                  <td><img src={employee.profile_image} alt={employee.name}/></td>
                   
                   <td>
                     <button onClick={() => window.confirm(`Deseja deletar o funcionario com id: ${employee.id} e nome ${employee.employee_name}?`)
